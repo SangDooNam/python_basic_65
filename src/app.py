@@ -1,60 +1,60 @@
 #!/usr/bin/env python
 
 
-class aquarium_app:
-    def __init__(this, FISHCOUNT, EyeColor, skinColor):
-        this.SkinColor = skinColor
-        this.PRIVATE_SWIM_COUNT = 0
-        this.EYECOLOR = EyeColor
-        this.protected_DEAD_FISH = 0
-        this.fishCount = FISHCOUNT
+class AquariumApp:
+    def __init__(self, fish_count, eye_color, skin_color):
+        self.skin_color = skin_color
+        self.__private_swim_count = 0
+        self.eye_color = eye_color
+        self._protected_dead_fish = 0
+        self.fish_count = fish_count
 
-    def _start(those):
-        if those.fishCount == 0:
+    def _start(self):
+        if self.fish_count == 0:
             print("There are no alive fish left.")
             return
-        those.PRIVATE_SWIM_COUNT += 1
+        self.__private_swim_count += 1
 
         print(
-            str(those.fishCount)
+            str(self.fish_count)
             + " fish are swimming. Their eyes are "
-            + those.EYECOLOR
+            + self.eye_color
             + " and their skin is "
-            + those.SkinColor
+            + self.skin_color
             + "."
         )
         print(
             "There are "
-            + str(those.protected_DEAD_FISH)
+            + str(self._protected_dead_fish)
             + " dead fish with them in the aquarium."
         )
         print(
             "The fish have now been swimming "
-            + str(those.PRIVATE_SWIM_COUNT)
+            + str(self.__private_swim_count)
             + " times."
         )
 
-    def __die_fish(__that, _number):
-        if __that.fishCount == 0:
+    def __die_fish(self, number):
+        if self.fish_count == 0:
             print("All fish are dead.")
             print("GAME OVER")
             print("=====")
             return
-        __that.fishCount -= _number
-        __that.protected_DEAD_FISH += _number
-        if _number > 1:
-            print(str(_number) + " fish have died.")
+        self.fish_count -= number
+        self._protected_dead_fish += number
+        if number > 1:
+            print(str(number) + " fish have died.")
         else:
             print("A fish has died.")
 
 
 if __name__ == "__main__":
-    MyAquariumApp = aquarium_app(5, "blue", "red")
-    MyAquariumApp._start()
-    MyAquariumApp._aquarium_app__die_fish(2)
-    MyAquariumApp._start()
-    MyAquariumApp._aquarium_app__die_fish(1)
-    MyAquariumApp._start()
-    MyAquariumApp._aquarium_app__die_fish(2)
-    MyAquariumApp._start()
-    MyAquariumApp._aquarium_app__die_fish(1)
+    my_aquarium_app = AquariumApp(5, "blue", "red")
+    my_aquarium_app._start()
+    my_aquarium_app._AquariumApp__die_fish(2)
+    my_aquarium_app._start()
+    my_aquarium_app._AquariumApp__die_fish(1)
+    my_aquarium_app._start()
+    my_aquarium_app._AquariumApp__die_fish(2)
+    my_aquarium_app._start()
+    my_aquarium_app._AquariumApp__die_fish(1)
